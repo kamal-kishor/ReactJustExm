@@ -1,8 +1,11 @@
 import logo from "./logo.svg";
+import './App.css';
 import ContactUs from "./components/ContactUs";
 import NavBar from "./components/NavBar";
 import Alert from "./components/Alert";
 import React, { useState } from "react";
+import HomeContainer from "./container/HomeContainer";
+import HeaderContainer from "./container/HeaderContainer";
 
 function App() {
   const [mode, setMode] = useState("light ");
@@ -32,13 +35,15 @@ function App() {
   return (
     <>
       <NavBar
-      title="Heading"
-      home="homeOne"
-      mode={mode}
-      toggleMode={toggleMode}
-    />
+        title="Heading"
+        home="homeOne"
+        mode={mode}
+        toggleMode={toggleMode}
+      />
       <Alert alert={alert} />
       {/* <ContactUs/> */}
+      {/* <HeaderContainer /> */}
+      {/* <HomeContainer /> */}
       <ContactUs heading="Contact Us" mode={mode} />
     </>
   );

@@ -1,6 +1,7 @@
 // import React from "react";
 import React, { useState } from "react";
 import InputField from "./InputField";
+import HomeContainer from "../container/HomeContainer";
 
 export default function ContactUs(props) {
   const handleOnChange = (event) => {
@@ -20,7 +21,9 @@ export default function ContactUs(props) {
         style={{ color: props.mode === "light" ? "white" : "#042743" }}
       >
         <div className="row mt-5">
-          <div className="col-md-6"></div>
+          <div className="col-md-6">
+            <HomeContainer />
+          </div>
           <div className="col-md-6">
             <h2>
               <center>{props.heading}</center>
