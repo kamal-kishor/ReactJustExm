@@ -1,7 +1,7 @@
 import React from "react";
 import { useFormik } from "formik";
 import { signUpSchema } from "../schemas";
-import { TextField } from "./TextField";
+// import { TextField } from "./TextField";
 
 export default function LogIn() {
   const initialValues = {
@@ -19,9 +19,9 @@ export default function LogIn() {
       validateOnBlur: false,
       //// By disabling validation onChange and onBlur formik will validate on submit.
       onSubmit: (values, action) => {
-        // console.log(values);
+        console.log(values);
         //// to get rid of all the values after submitting the form
-        // action.resetForm();
+        action.resetForm();
       },
     });
 
@@ -35,6 +35,7 @@ export default function LogIn() {
               <label htmlFor="exampleInputEmail1" className="form-label">
                 Name
               </label>
+              {/* <TextField label="First Name" name="name" type="text" /> */}
               <input
                 type="name"
                 autoComplete="off"
@@ -93,7 +94,7 @@ export default function LogIn() {
                 Confirm Password
               </label>
               <input
-                // <TextField 
+                // <TextField
                 name="confirm_password"
                 type="password"
                 autoComplete="off"
