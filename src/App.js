@@ -3,10 +3,10 @@ import './App.css';
 import ContactUs from "./components/ContactUs";
 import NavBar from "./components/NavBar";
 import Alert from "./components/Alert";
+import LogIn from "./components/LogIn";
 import React, { useState } from "react";
 import HomeContainer from "./container/HomeContainer";
 import HeaderContainer from "./container/HeaderContainer";
-import LogIn from "./components/LogIn";
 
 function App() {
   const [mode, setMode] = useState("light ");

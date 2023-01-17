@@ -1,54 +1,123 @@
-import React from 'react';
-import { Formik, Form } from 'formik';
-import TextField from './TextField';
-import * as Yup from 'yup';
+import React from "react";
+import { useFormik } from "formik";
+import { signUpSchema } from "../schemas";
+import { TextField } from "./TextField";
 
-export const LogIn = () => {
-  const validate = Yup.object({
-    firstName: Yup.string()
-      .max(15, 'Must be 15 characters or less')
-      .required('Required'),
-    lastName: Yup.string()
-      .max(20, 'Must be 20 characters or less')
-      .required('Required'),
-    email: Yup.string()
-      .email('Email is invalid')
-      .required('Email is required'),
-    password: Yup.string()
-      .min(6, 'Password must be at least 6 charaters')
-      .required('Password is required'),
-    confirmPassword: Yup.string()
-      .oneOf([Yup.ref('password'), null], 'Password must match')
-      .required('Confirm password is required'),
-  })
+export default function LogIn() {
+  const initialValues = {
+    name: "",
+    email: "",
+    password: "",
+    confirm_password: "",
+  };
+
+  const { values, handleBlur, handleChange, handleSubmit, errors, touched } =
+    useFormik({
+      initialValues,
+      validationSchema: signUpSchema,
+      validateOnChange: true,
+      validateOnBlur: false,
+      //// By disabling validation onChange and onBlur formik will validate on submit.
+      onSubmit: (values, action) => {
+        // console.log(values);
+        //// to get rid of all the values after submitting the form
+        // action.resetForm();
+      },
+    });
+
+  console.log(errors);
   return (
-    <Formik
-      initialValues={{
-        firstName: '',
-        lastName: '',
-        email: '',
-        password: '',
-        confirmPassword: ''
-      }}
-      validationSchema={validate}
-      onSubmit={values => {
-        console.log(values)
-      }}
-    >
-      {formik => (
-        <div>
-          <h1 className="my-4 font-weight-bold .display-4">Sign Up</h1>
-          <Form>
-            <TextField label="First Name" name="firstName" type="text" />
-            <TextField label="last Name" name="lastName" type="text" />
-            <TextField label="Email" name="email" type="email" />
-            <TextField label="password" name="password" type="password" />
-            <TextField label="Confirm Password" name="confirmPassword" type="password" />
-            <button className="btn btn-dark mt-3" type="submit">Register</button>
-            <button className="btn btn-danger mt-3 ml-3" type="reset">Reset</button>
-          </Form>
+    <div className="container">
+      <div className="row">
+        <div className="col-lg-6">
+          <form onSubmit={handleSubmit}>
+            <div className="my-3">
+              <label htmlFor="exampleInputEmail1" className="form-label">
+                Name
+              </label>
+              <input
+                type="name"
+                autoComplete="off"
+                name="name"
+                id="name"
+                placeholder="Name"
+                value={values.name}
+                onChange={handleChange}
+                onBlur={handleBlur}
+                className="form-control"
+              />
+              {touched.name && errors.name ? (
+                <p className="error">{errors.name}</p>
+              ) : null}
+            </div>
+            <div className="my-3">
+              <label htmlFor="exampleInputEmail1" className="form-label">
+                Email
+              </label>
+              <input
+                type="email"
+                autoComplete="off"
+                name="email"
+                id="email"
+                placeholder="Email"
+                value={values.email}
+                onChange={handleChange}
+                onBlur={handleBlur}
+                className="form-control"
+              />
+              {errors.email && touched.email ? (
+                <p className="error">{errors.email}</p>
+              ) : null}
+            </div>
+            <div className="my-3">
+              <label htmlFor="exampleInputEmail1" className="form-label">
+                Password
+              </label>
+              <input
+                type="password"
+                autoComplete="off"
+                name="password"
+                id="password"
+                placeholder="Password"
+                value={values.password}
+                onChange={handleChange}
+                onBlur={handleBlur}
+                className="form-control"
+              />
+              {errors.password && touched.password ? (
+                <p className="error">{errors.password}</p>
+              ) : null}
+            </div>
+            <div className="my-3">
+              <label htmlFor="exampleInputEmail1" className="form-label">
+                Confirm Password
+              </label>
+              <input
+                // <TextField 
+                name="confirm_password"
+                type="password"
+                autoComplete="off"
+                name="confirm_password"
+                id="confirm_password"
+                placeholder="Confirm Password"
+                value={values.confirm_password}
+                onChange={handleChange}
+                onBlur={handleBlur}
+                className="form-control"
+              />
+              {errors.confirm_password && touched.confirm_password ? (
+                <p className="error">{errors.confirm_password}</p>
+              ) : null}
+            </div>
+            <div className="row my-3">
+              <button className="btn btn-success" type="submit">
+                Registration
+              </button>
+            </div>
+          </form>
         </div>
-      )}
-    </Formik>
-  )
+        <div className="col-lg-6"></div>
+      </div>
+    </div>
+  );
 }

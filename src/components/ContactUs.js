@@ -3,6 +3,7 @@ import React, { useState } from "react";
 import InputField from "./InputField";
 import HomeContainer from "../container/HomeContainer";
 import FunComponent from "./FunComponent";
+
 export default function ContactUs(props) {
   const handleOnChange = (event) => {
     setmsg(event.target.value);
