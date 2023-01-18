@@ -14,10 +14,15 @@
   
   "plugins": ["react", "prettier"],
   "rules": {
-    "prettier/prettier": "error",
     "react/prop-types": 0,
     "linebreak-style": ["error", "unix"],
     "arrow-body-style": "off",
-    "prefer-arrow-callback": "off"
+    "prefer-arrow-callback": "off",
+    "prettier/prettier": [
+      "error",
+      {
+        "endOfLine": "auto"
+      }
+    ]
   }
 }

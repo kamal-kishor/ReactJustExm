@@ -4,7 +4,6 @@
   "private": true,
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.5",
-    "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
     "formik": "^2.2.9",
     "react": "^18.2.0",
@@ -22,7 +21,9 @@
     "eject": "react-scripts eject",
     "pre-commit": "lint-staged",
     "lint": "eslint .",
-    "postinstall": "husky install && cd app && yarn install"
+    "postinstall": "husky install && cd app && yarn install",
+    "storybook": "start-storybook -p 6006 -s public",
+    "build-storybook": "build-storybook -s public"
   },
   "lint-staged": {
     "*.+(js|jsx)": [
@@ -37,6 +38,16 @@
     "extends": [
       "react-app",
       "react-app/jest"
+    ],
+    "overrides": [
+      {
+        "files": [
+          "**/*.stories.*"
+        ],
+        "rules": {
+          "import/no-anonymous-default-export": "off"
+        }
+      }
     ]
   },
   "browserslist": {
@@ -52,13 +63,28 @@
     ]
   },
   "devDependencies": {
+    "@storybook/addon-actions": "^6.5.15",
+    "@storybook/addon-essentials": "^6.5.15",
+    "@storybook/addon-interactions": "^6.5.15",
+    "@storybook/addon-links": "^6.5.15",
+    "@storybook/builder-webpack5": "^6.5.15",
+    "@storybook/manager-webpack5": "^6.5.15",
+    "@storybook/node-logger": "^6.5.15",
+    "@storybook/preset-create-react-app": "^4.1.2",
+    "@storybook/react": "^6.5.15",
+    "@storybook/testing-library": "^0.0.13",
+    "@testing-library/react": "^13.4.0",
+    "babel-plugin-named-exports-order": "^0.0.2",
     "eslint": "^8.32.0",
     "eslint-config-prettier": "^8.6.0",
     "eslint-plugin-prettier": "^4.2.1",
     "eslint-plugin-react": "^7.32.1",
     "husky": "^8.0.3",
     "jest": "^27.5.1",
-    "prettier": "^2.8.3"
+    "prettier": "^2.8.3",
+    "prop-types": "^15.8.1",
+    "react-test-renderer": "^18.2.0",
+    "webpack": "^5.75.0"
   },
   "husky": {
     "hooks": {
