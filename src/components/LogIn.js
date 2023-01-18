@@ -1,6 +1,7 @@
 import React from "react";
 import { useFormik } from "formik";
 import { signUpSchema } from "../schemas";
+import Sum from "./Sum";
 // import { TextField } from "./TextField";
 
 export default function LogIn() {
@@ -117,7 +118,9 @@ export default function LogIn() {
             </div>
           </form>
         </div>
-        <div className="col-lg-6"></div>
+        <div className="col-lg-6">
+          <Sum/>
+        </div>
       </div>
     </div>
   );
