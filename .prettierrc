@@ -5,5 +5,7 @@
   "singleQuote": true,
   "trailingComma": "none",
   "jsxBracketSameLine": true,
-  "arrowParens": "always"
+  "arrowParens": "always",
+  "eslintIntegration": true,
+  "stylelintIntegration": true
 }

@@ -5,45 +5,39 @@ import Alert from './components/Alert'
 import LogIn from './components/LogIn'
 import React, { useState } from 'react'
 
-
 function App() {
-  const [mode, setMode] = useState("light ");
-  const [alert, setAlert] = useState(null);
+  const [mode, setMode] = useState('light ')
+  const [alert, setAlert] = useState(null)
 
   const showAlert = (message, type) => {
     setAlert({
       msg: message,
-      type: type,
-    });
+      type: type
+    })
     setTimeout(() => {
-      setAlert(null);
-    }, 2000);
-  };
+      setAlert(null)
+    }, 2000)
+  }
 
   const toggleMode = () => {
-    if (mode === "light") {
-      setMode("dark");
-      document.body.style.backgroundColor = "white";
-      showAlert("Light mode has been enabled", "sucess");
+    if (mode === 'light') {
+      setMode('dark')
+      document.body.style.backgroundColor = 'white'
+      showAlert('Light mode has been enabled', 'sucess')
     } else {
-      setMode("light");
-      document.body.style.backgroundColor = "#042743";
-      showAlert("Dark mode has been enabled", "sucess");
+      setMode('light')
+      document.body.style.backgroundColor = '#042743'
+      showAlert('Dark mode has been enabled', 'sucess')
     }
-  };
+  }
   return (
     <>
-      <NavBar
-        title="Heading"
-        home="homeOne"
-        mode={mode}
-        toggleMode={toggleMode}
-      />
+      <NavBar title="Heading" home="homeOne" mode={mode} toggleMode={toggleMode} />
       <Alert alert={alert} />
       <ContactUs heading="Contact Us" mode={mode} />
-      <LogIn/>
+      <LogIn />
     </>
-  );
+  )
 }
 
-export default App;
+export default App

@@ -1,16 +1,15 @@
-import React from "react";
-import { useFormik } from "formik";
-import { signUpSchema } from "../schemas";
-import Sum from "./Sum";
-// import { TextField } from "./TextField";
+import React from 'react'
+import { useFormik } from 'formik'
+import { signUpSchema } from '../schemas'
+import Sum from './Sum'
 
 export default function LogIn() {
   const initialValues = {
-    name: "",
-    email: "",
-    password: "",
-    confirm_password: "",
-  };
+    name: '',
+    email: '',
+    password: '',
+    confirm_password: ''
+  }
 
   const { values, handleBlur, handleChange, handleSubmit, errors, touched } =
     useFormik({
@@ -20,13 +19,13 @@ export default function LogIn() {
       validateOnBlur: false,
       //// By disabling validation onChange and onBlur formik will validate on submit.
       onSubmit: (values, action) => {
-        console.log(values);
+        console.log(values)
         //// to get rid of all the values after submitting the form
-        action.resetForm();
-      },
-    });
+        action.resetForm()
+      }
+    })
 
-  console.log(errors);
+  console.log(errors)
   return (
     <div className="container">
       <div className="row">
@@ -36,7 +35,7 @@ export default function LogIn() {
               <label htmlFor="exampleInputEmail1" className="form-label">
                 Name
               </label>
-              {/* <TextField label="First Name" name="name" type="text" /> */}
+              {/* <TextField label='First Name' name="name' type="text' /> */}
               <input
                 type="name"
                 autoComplete="off"
@@ -65,7 +64,7 @@ export default function LogIn() {
                 value={values.email}
                 onChange={handleChange}
                 onBlur={handleBlur}
-                className="form-control"
+                className="form-contro"
               />
               {errors.email && touched.email ? (
                 <p className="error">{errors.email}</p>
@@ -84,7 +83,7 @@ export default function LogIn() {
                 value={values.password}
                 onChange={handleChange}
                 onBlur={handleBlur}
-                className="form-control"
+                className="form-contro"
               />
               {errors.password && touched.password ? (
                 <p className="error">{errors.password}</p>
@@ -99,13 +98,12 @@ export default function LogIn() {
                 name="confirm_password"
                 type="password"
                 autoComplete="off"
-                name="confirm_password"
                 id="confirm_password"
                 placeholder="Confirm Password"
                 value={values.confirm_password}
                 onChange={handleChange}
                 onBlur={handleBlur}
-                className="form-control"
+                className="form-contro"
               />
               {errors.confirm_password && touched.confirm_password ? (
                 <p className="error">{errors.confirm_password}</p>
@@ -119,9 +117,9 @@ export default function LogIn() {
           </form>
         </div>
         <div className="col-lg-6">
-          <Sum/>
+          <Sum />
         </div>
       </div>
     </div>
-  );
+  )
 }

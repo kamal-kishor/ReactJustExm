@@ -1,30 +1,28 @@
-// import React from "react";
-import React, { useState } from "react";
-import InputField from "./InputField";
-import HomeContainer from "../container/HomeContainer";
-import FunComponent from "./FunComponent";
+import React, { useState } from 'react'
+import InputField from './InputField'
+import HomeContainer from '../container/HomeContainer'
+import FunComponent from './FunComponent'
 
 export default function ContactUs(props) {
   const handleOnChange = (event) => {
-    setmsg(event.target.value);
-  };
+    setmsg(event.target.value)
+  }
 
   const converttoUpperCase = () => {
-    let newmsg = msg.toUpperCase();
-    setmsg(newmsg);
-  };
+    let newmsg = msg.toUpperCase()
+    setmsg(newmsg)
+  }
 
-  const [msg, setmsg] = useState("Enter The Message");
+  const [msg, setmsg] = useState('Enter The Message')
   return (
     <div>
       <div
         className="container"
-        style={{ color: props.mode === "light" ? "white" : "#042743" }}
-      >
+        style={{ color: props.mode === 'light' ? 'white' : '#042743' }}>
         <div className="row mt-5">
           <div className="col-md-6">
             <HomeContainer />
-            <FunComponent/>
+            <FunComponent />
           </div>
           <div className="col-md-6">
             <h2>
@@ -42,7 +40,7 @@ export default function ContactUs(props) {
                   row="1"
                 />
                 <div id="emailHelp" className="form-text">
-                  We'll never share your email with anyone else.
+                  We`&apos;`ll never share your email with anyone else.
                 </div>
               </div>
               <div className="mb-3">
@@ -62,20 +60,18 @@ export default function ContactUs(props) {
                   value={msg}
                   onChange={handleOnChange}
                   style={{
-                    backgroundColor: props.mode === "light" ? "grey" : "white",
-                    color: props.mode === "dark" ? "#042743" : "white",
+                    backgroundColor: props.mode === 'light' ? 'grey' : 'white',
+                    color: props.mode === 'dark' ? '#042743' : 'white',
                   }}
                   id="myBox"
-                  rows="8"
-                ></textarea>
+                  rows="8"></textarea>
               </div>
               <div className="row mb-4">
                 <button
                   type="submit"
                   className="btn btn-primary"
-                  onClick={converttoUpperCase}
-                >
-                  Submit{" "}
+                  onClick={converttoUpperCase}>
+                  Submit{''}
                 </button>
               </div>
             </form>
@@ -83,5 +79,5 @@ export default function ContactUs(props) {
         </div>
       </div>
     </div>
-  );
+  )
 }

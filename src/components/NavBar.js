@@ -1,5 +1,5 @@
-import React from "react";
-import PropTypes from "prop-types";
+import React from 'react'
+import PropTypes from 'prop-types'
 
 export default function NavBar(props) {
   return (
@@ -33,8 +33,7 @@ export default function NavBar(props) {
                   role="button"
                   data-bs-toggle="dropdown"
                   aria-expanded="false"
-                >
-                  Dropdown
+                >Dropdown
                 </a>
                 <ul className="dropdown-menu" aria-labelledby="navbarDropdown">
                   <li><a className="dropdown-item" href="#">Action</a></li>
@@ -58,26 +57,25 @@ export default function NavBar(props) {
                   className="nav-link disabled"
                   href="#"
                   tabIndex="-1"
-                  aria-disabled="true"
-                >
-                  Disabled
+                  aria-disabled="true">
+                    Disabled
                 </a>
               </li>
             </ul>
-            {/* <form className="d-flex">
+            {/* <form className="d-flex'>
               <input
-                className="form-control me-2"
+                className="form-control me-2'
                 type="search"
-                placeholder="Search"
+                placeholder='Search'
                 aria-label="Search"
               />
-              <button className="btn btn-outline-success" type="submit">
+              <button className="btn btn-outline-success' type="submit'"
                 Search
               </button>
             </form> */}
             <div
               className={`form-check form-switch test -${
-                props.mode === "light" ? "dark" : "light"
+                props.mode === 'light' ? 'dark' : 'light'
               }`}
             >
               <input
@@ -97,14 +95,14 @@ export default function NavBar(props) {
         </div>
       </nav>
     </>
-  );
+  )
 }
 
 NavBar.propTypes = {
   title: PropTypes.string,
   home: PropTypes.string,
-};
+}
 NavBar.defaultProps = {
-  title: "Default Title",
-  home: "Default Home",
-};
+  title: 'Default Title',
+  home: 'Default Home',
+}

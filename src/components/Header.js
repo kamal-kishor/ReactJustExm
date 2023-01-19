@@ -1,7 +1,7 @@
-import React from "react";
+import React from 'react'
 
 export default function Header(props) {
-  console.warn(props.data);
+  console.warn(props.data)
   return (
     <div>
       <div className="add-to-cart">
@@ -12,5 +12,5 @@ export default function Header(props) {
         />
       </div>
     </div>
-  );
+  )
 }

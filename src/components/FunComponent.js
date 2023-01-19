@@ -1,19 +1,17 @@
-import React from "react";
-import InputField from "./InputField";
-import { useState, useEffect, useRef } from "react";
+import React from 'react'
+import { useState, useEffect, useRef } from 'react'
 
 export default function FunComponent() {
-  const [inputValue, setinputValue] = useState("");
-  const count = useRef(0);
-  const refElement = useRef("");
+  const [inputValue, setinputValue] = useState('')
+  const count = useRef(0)
+  const refElement = useRef('')
 
   useEffect(() => {
-    count.current = count.current + 1;
-  },[inputValue]
-  );
+    count.current = count.current + 1
+  }, [inputValue])
 
   function handleInput() {
-    refElement.current.style.color ="red";
+    refElement.current.style.color = 'red'
   }
   return (
     <div className="container">
@@ -25,15 +23,16 @@ export default function FunComponent() {
             value={inputValue}
             className="form-control"
             id="InputText"
-            row="1"
             onChange={(e) => setinputValue(e.target.value)}
           />
-          <button className="btn btn-danger my-2 c" onClick={handleInput}>Change Color</button>
+          <button className="btn btn-danger my-2 c" onClick={handleInput}>
+            Change Color
+          </button>
         </div>
         <div className="col-lg-4">
           <p>Total no of count {count.current}</p>
         </div>
       </div>
     </div>
-  );
+  )
 }
