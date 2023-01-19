@@ -61,7 +61,7 @@ export default function ContactUs(props) {
                   onChange={handleOnChange}
                   style={{
                     backgroundColor: props.mode === 'light' ? 'grey' : 'white',
-                    color: props.mode === 'dark' ? '#042743' : 'white',
+                    color: props.mode === 'dark' ? '#042743' : 'white'
                   }}
                   id="myBox"
                   rows="8"></textarea>

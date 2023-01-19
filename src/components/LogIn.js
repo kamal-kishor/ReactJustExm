@@ -64,7 +64,7 @@ export default function LogIn() {
                 value={values.email}
                 onChange={handleChange}
                 onBlur={handleBlur}
-                className="form-contro"
+                className="form-control"
               />
               {errors.email && touched.email ? (
                 <p className="error">{errors.email}</p>
@@ -83,7 +83,7 @@ export default function LogIn() {
                 value={values.password}
                 onChange={handleChange}
                 onBlur={handleBlur}
-                className="form-contro"
+                className="form-control"
               />
               {errors.password && touched.password ? (
                 <p className="error">{errors.password}</p>
@@ -103,7 +103,7 @@ export default function LogIn() {
                 value={values.confirm_password}
                 onChange={handleChange}
                 onBlur={handleBlur}
-                className="form-contro"
+                className="form-control"
               />
               {errors.confirm_password && touched.confirm_password ? (
                 <p className="error">{errors.confirm_password}</p>

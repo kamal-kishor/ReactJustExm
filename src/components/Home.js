@@ -1,5 +1,7 @@
 import React from 'react'
 import HeaderContainer from '../container/HeaderContainer'
+import PropTypes from 'prop-types'
+// import { Select } from './select/Select'
 
 export default function Home(props) {
   return (
@@ -24,8 +26,8 @@ export default function Home(props) {
               className="btn btn-primary"
               onClick={() => {
                 props.addToCartHandler({ pice: 1000, name: 'i phone 11' })
-                }}>
-                  Add To Cart
+              }}>
+              Add To Cart
             </button>
           </div>
           <div className="col-lg-2">
@@ -33,6 +35,11 @@ export default function Home(props) {
           </div>
         </div>
       </div>
+      <div className="container">{/* <Select /> */}</div>
     </div>
   )
+}
+
+Home.propTypes = {
+  addToCartHandler: PropTypes.string
 }

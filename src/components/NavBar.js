@@ -4,9 +4,13 @@ import PropTypes from 'prop-types'
 export default function NavBar(props) {
   return (
     <>
-      <nav className={`navbar navbar-expand-lg navbar-${props.mode} bg-${props.mode}`}>
+      <nav
+        className={`navbar navbar-expand-lg navbar-${props.mode} bg-${props.mode}`}>
         <div className="container-fluid">
-          <a className="navbar-brand" href="#"> {props.title} </a>
+          <a className="navbar-brand" href="#">
+            {' '}
+            {props.title}{' '}
+          </a>
           <button
             className="navbar-toggler"
             type="button"
@@ -14,29 +18,37 @@ export default function NavBar(props) {
             data-bs-target="#navbarSupportedContent"
             aria-controls="navbarSupportedContent"
             aria-expanded="false"
-            aria-label="Toggle navigation"
-          >
+            aria-label="Toggle navigation">
             <span className="navbar-toggler-icon"></span>
           </button>
           <div className="collapse navbar-collapse" id="navbarSupportedContent">
             <ul className="navbar-nav me-auto mb-2 mb-lg-0">
               <li className="nav-item">
-                <a className="nav-link active" aria-current="page" href="#">{props.home}</a>
+                <a className="nav-link active" aria-current="page" href="#">
+                  {props.home}
+                </a>
               </li>
               <li className="nav-item">
-                <a className="nav-link" href="#">Link</a>
+                <a className="nav-link" href="#">
+                  Link
+                </a>
               </li>
               <li className="nav-item dropdown">
-                <a className="nav-link dropdown-toggle"
+                <a
+                  className="nav-link dropdown-toggle"
                   href="#"
                   id="navbarDropdown"
                   role="button"
                   data-bs-toggle="dropdown"
-                  aria-expanded="false"
-                >Dropdown
+                  aria-expanded="false">
+                  Dropdown
                 </a>
                 <ul className="dropdown-menu" aria-labelledby="navbarDropdown">
-                  <li><a className="dropdown-item" href="#">Action</a></li>
+                  <li>
+                    <a className="dropdown-item" href="#">
+                      Action
+                    </a>
+                  </li>
                   <li>
                     <a className="dropdown-item" href="#">
                       Another action
@@ -58,7 +70,7 @@ export default function NavBar(props) {
                   href="#"
                   tabIndex="-1"
                   aria-disabled="true">
-                    Disabled
+                  Disabled
                 </a>
               </li>
             </ul>
@@ -76,18 +88,14 @@ export default function NavBar(props) {
             <div
               className={`form-check form-switch test -${
                 props.mode === 'light' ? 'dark' : 'light'
-              }`}
-            >
+              }`}>
               <input
                 type="checkbox"
                 onClick={props.toggleMode}
                 id="flexSwitchCheckDefault"
                 className="form-check-input"
               />
-              <lable
-                className="form-check-lable"
-                htmlFor="flexSwitchCheckDefault"
-              >
+              <lable className="form-check-lable" htmlFor="flexSwitchCheckDefault">
                 Enable DarkMode
               </lable>
             </div>
@@ -100,9 +108,9 @@ export default function NavBar(props) {
 
 NavBar.propTypes = {
   title: PropTypes.string,
-  home: PropTypes.string,
+  home: PropTypes.string
 }
 NavBar.defaultProps = {
   title: 'Default Title',
-  home: 'Default Home',
+  home: 'Default Home'
 }

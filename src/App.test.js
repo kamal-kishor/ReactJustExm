@@ -1,6 +1,6 @@
-import { render, screen,cleanup } from '@testing-library/react';
+import { render, screen, cleanup } from '@testing-library/react'
 // import Home from "./components/Home";
-import Sum from "./components/Sum";
+import Sum from './components/Sum'
 
 // test('renders learn react link', () => {
 //   render(<Home />);
@@ -8,6 +8,6 @@ import Sum from "./components/Sum";
 //   expect(linkElement).toBeInTheDocument();
 // });
 
-test("Sample test case",()=>{
+test('Sample test case', () => {
   expect(Sum()).toBe(14)
-});
+})

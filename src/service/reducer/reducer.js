@@ -1,13 +1,13 @@
-import { ADD_TO_CART } from "../contant";
+import { ADD_TO_CART } from '../contant'
 const initialState = {
-  cardData: [],
-};
+  cardData: []
+}
 export default function cardItems(state = [], action) {
   switch (action.type) {
     case ADD_TO_CART:
       // console.warn("reducer",action)
-      return [...state, { cardData: action.data }];
+      return [...state, { cardData: action.data }]
     default:
-      return state;
+      return state
   }
 }
