@@ -1,6 +1,5 @@
 import React from 'react'
-// import { ComponentMeta } from '@storybook/react'
-import Field from './Select'
+import AnimationSelect from './AnimationSelect'
 
 const options = [
   { label: 'React', value: 'react' },
@@ -11,10 +10,10 @@ const options = [
 ]
 
 export default {
-  title: 'ExampleOne/Select',
-  component: Field
+  title: 'ExampleOne/AnimationSelect',
+  component: AnimationSelect
 }
-const Template = (args) => <Field {...args} />
+const Template = (args) => <AnimationSelect {...args} />
 
 export const Primary = Template.bind({})
 Primary.args = {

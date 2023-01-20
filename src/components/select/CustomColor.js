@@ -1,9 +1,9 @@
 import React from 'react'
 import Select from 'react-select'
 
-export const CustomSelect = ({ backgroundColor, option, ...props }) => {
+export const CustomSelect = ({ colorStyle, option, ...props }) => {
   return (
-    <div style={backgroundColor && { backgroundColor }} {...props}>
+    <div style={colorStyle} {...props}>
       <Select options={option} />
     </div>
   )
