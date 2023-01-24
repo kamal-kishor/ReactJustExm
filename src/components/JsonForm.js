@@ -2,7 +2,6 @@ import React from 'react'
 import ButtonsComponent from './buttons/ButtonsComponent'
 import InputFields from './inputs/Input'
 import CustomSelect from './select/Select'
-// import {} from 'module'
 
 const data = {
   form: {
@@ -93,14 +92,14 @@ export default function JsonForm() {
   //   })
   // }
 
-  // const onSubmit = (event) => {
-  //   event.preventDefault()
-  //   console.log('Form Data:', event)
-  // }
+  const onSubmit = () => {
+    // event.preventDefault()
+    console.log('Form Data:')
+  }
 
   return (
     <div>
-      <form>
+      <form onSubmit={onSubmit}>
         {data.form.sections.map((formData) => {
           return (
             <div key={formData.order}>
@@ -117,8 +116,8 @@ export default function JsonForm() {
                         placeholder={inputData.label}
                         required={inputData.required}
                         name={inputData.name}
-                        onChange={this.handleChange}
-                        ref={(ref) => (this.formRefs[inputData.name] = ref)}
+                        // onChange={this.handleChange}
+                        // ref={(ref) => (this.formRefs[inputData.name] = ref)}
                       />
                     )
                   case 'email':
@@ -129,8 +128,8 @@ export default function JsonForm() {
                         placeholder={inputData.label}
                         required={inputData.required}
                         name={inputData.name}
-                        onChange={this.handleChange}
-                        ref={(ref) => (this.formRefs[inputData.name] = ref)}
+                        // onChange={this.handleChange}
+                        // ref={(ref) => (this.formRefs[inputData.name] = ref)}
                       />
                     )
                   case 'number':
@@ -141,8 +140,8 @@ export default function JsonForm() {
                         placeholder={inputData.label}
                         required={inputData.required}
                         name={inputData.name}
-                        onChange={this.handleChange}
-                        ref={(ref) => (this.formRefs[inputData.name] = ref)}
+                        // onChange={this.handleChange}
+                        // ref={(ref) => (this.formRefs[inputData.name] = ref)}
                       />
                     )
                   case 'dropdown':
@@ -150,8 +149,8 @@ export default function JsonForm() {
                       <CustomSelect
                         option={inputData.dropcyle}
                         name={inputData.name}
-                        onChange={this.handleChange}
-                        ref={(ref) => (this.formRefs[inputData.name] = ref)}
+                        // onChange={this.handleChange}
+                        // ref={(ref) => (this.formRefs[inputData.name] = ref)}
                       />
                     )
                   default:
