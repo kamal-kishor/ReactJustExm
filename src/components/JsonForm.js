@@ -2,28 +2,79 @@ import React from 'react'
 import ButtonsComponent from './buttons/ButtonsComponent'
 import InputFields from './inputs/Input'
 import CustomSelect from './select/Select'
+// import {} from 'module'
 
-const data={
-  "form":{
-    "section":[
+const data = {
+  form: {
+    section: [
       {
-        "order":1,
-        "section_title":"Basic Information from Json",
-        "fields":[
+        order: 1,
+        section_title: 'Basic Information from Json',
+        fields: [
           {
-            "name":"name",
-            "label":"Name",
-            "required":true,
-            "data_type":"Integer",
-            "html_element":"textbox"
+            name: 'name',
+            label: 'Name',
+            required: true,
+            data_type: 'Integer',
+            html_element: 'textbox'
+          },
+          {
+            name: 'email',
+            label: 'Email',
+            hidden: false,
+            required: true,
+            data_type: 'String',
+            html_element: 'email'
+          },
+          {
+            name: 'phone',
+            label: 'Phone',
+            required: true,
+            data_type: 'number',
+            html_element: 'textbox'
+          },
+          {
+            name: 'age',
+            label: 'Age',
+            hidden: false,
+            option: [],
+            required: true,
+            data_type: 'number',
+            html_element: 'number'
+          },
+          {
+            name: 'photo',
+            label: 'Photo',
+            option: [],
+            hidden: false,
+            required: true,
+            data_type: 'Image',
+            html_element: 'file'
+          },
+          {
+            name: 'dropdown',
+            label: 'Gender',
+            option: [],
+            hidden: false,
+            required: true,
+            data_type: 'Image',
+            html_element: 'file',
+            dropcyle: [
+              { label: 'Male', value: 'male' },
+              { label: 'Female', value: 'female' },
+              { label: 'Other', value: 'other' }
+            ]
           }
         ]
       }
     ]
   }
 }
-export default function Jsonform() {
-  // constructor(props) {
+export default function JsonForm() {
+  // const [formValues, setFormValues] = useState({})
+  // const formRefs = useRef({})
+
+  // constructor = (props) => {
   //   super(props)
   //   this.state = {
   //     formValues: {}
@@ -33,7 +84,7 @@ export default function Jsonform() {
   //   this.onSubmit = this.onSubmit.bind(this)
   // }
 
-  // handleChange(event) {
+  // handleChange = (event) => {
   //   this.setState({
   //     formValues: {
   //       ...this.state.formValues,
@@ -42,14 +93,14 @@ export default function Jsonform() {
   //   })
   // }
 
-  onSubmit(event) {
-    event.preventDefault()
-    console.log('Form Data:', this.state.formValues)
-  }
+  // const onSubmit = (event) => {
+  //   event.preventDefault()
+  //   console.log('Form Data:', event)
+  // }
 
-  render() {
-    return (
-      <form onSubmit={this.onSubmit}>
+  return (
+    <div>
+      <form>
         {data.form.sections.map((formData) => {
           return (
             <div key={formData.order}>
@@ -114,6 +165,6 @@ export default function Jsonform() {
           <ButtonsComponent contained="success" label="Submit" type="submit" />
         </div>
       </form>
-    )
-  }
+    </div>
+  )
 }

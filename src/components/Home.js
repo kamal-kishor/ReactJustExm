@@ -29,6 +29,15 @@ export default function Home(props) {
               }}>
               Add To Cart
             </button>
+            <div className="my-2">
+              <button
+                className="btn btn-secondary"
+                onClick={() => {
+                  props.removeToCartHandler()
+                }}>
+                Remove To Cart
+              </button>
+            </div>
           </div>
           <div className="col-lg-2">
             <HeaderContainer />

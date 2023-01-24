@@ -2,7 +2,7 @@ import React from 'react'
 import { useFormik } from 'formik'
 import { signUpSchema } from '../schemas'
 import Sum from './Sum'
-import { Jsonform } from './JsonForm'
+// import JsonForm from './JsonForm'
 
 export default function LogIn() {
   const initialValues = {
@@ -119,7 +119,7 @@ export default function LogIn() {
         </div>
         <div className="col-lg-6">
           <Sum />
-          <Jsonform />
+          {/* <JsonForm /> */}
         </div>
       </div>
     </div>
