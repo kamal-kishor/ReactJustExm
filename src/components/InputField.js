@@ -6,7 +6,7 @@ export default function InputField(props) {
       type={props.type}
       className={props.className}
       id={props.id}
-      row={props.row}
+      // row={props.row}
     />
   )
 }

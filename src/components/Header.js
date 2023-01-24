@@ -5,7 +5,7 @@ export default function Header(props) {
   return (
     <div>
       <div className="add-to-cart">
-        <span className="cart-count">{props.data.length}</span>
+        <span className="cart-count">{props.data.length - 1}</span>
         <img
           className="img-wrapper"
           src="https://static.vecteezy.com/system/resources/thumbnails/000/496/007/small/Ecommerce_998.jpg"
