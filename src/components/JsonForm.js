@@ -51,13 +51,13 @@ const data = {
             html_element: 'file'
           },
           {
-            name: 'dropdown',
+            name: 'gender',
             label: 'Gender',
             option: [],
             hidden: false,
             required: true,
-            data_type: 'Image',
-            html_element: 'file',
+            data_type: 'string',
+            html_element: 'dropdown',
             dropcyle: [
               { label: 'Male', value: 'male' },
               { label: 'Female', value: 'female' },
@@ -70,37 +70,14 @@ const data = {
   }
 }
 export default function JsonForm() {
-  // const [formValues, setFormValues] = useState({})
-  // const formRefs = useRef({})
-
-  // constructor = (props) => {
-  //   super(props)
-  //   this.state = {
-  //     formValues: {}
-  //   }
-  //   this.formRefs = {}
-  //   this.handleChange = this.handleChange.bind(this)
-  //   this.onSubmit = this.onSubmit.bind(this)
+  // const onSubmit = (values) => {
+  //   console.log('Form Data ', values)
   // }
-
-  // handleChange = (event) => {
-  //   this.setState({
-  //     formValues: {
-  //       ...this.state.formValues,
-  //       [event.target.name]: event.target.value
-  //     }
-  //   })
-  // }
-
-  const onSubmit = () => {
-    // event.preventDefault()
-    console.log('Form Data:')
-  }
 
   return (
     <div>
-      <form onSubmit={onSubmit}>
-        {data.form.sections.map((formData) => {
+      <form>
+        {data.form.section.map((formData) => {
           return (
             <div key={formData.order}>
               <h4>
@@ -148,7 +125,7 @@ export default function JsonForm() {
                     return (
                       <CustomSelect
                         option={inputData.dropcyle}
-                        name={inputData.name}
+                        label={inputData.label}
                         // onChange={this.handleChange}
                         // ref={(ref) => (this.formRefs[inputData.name] = ref)}
                       />

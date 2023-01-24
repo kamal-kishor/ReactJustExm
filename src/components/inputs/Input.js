@@ -39,7 +39,7 @@ InputFields.propTypes = {
 
 InputFields.defaultProps = {
   label: 'Enter text',
-  size: 'lg',
+  // size: 'lg',
   type: 'text',
   id: 'inputField',
   className: 'mb-3'

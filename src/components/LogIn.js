@@ -119,7 +119,9 @@ export default function LogIn() {
         </div>
         <div className="col-lg-6">
           <Sum />
-          <JsonForm />
+          <div className="row">
+            <JsonForm />
+          </div>
         </div>
       </div>
     </div>
