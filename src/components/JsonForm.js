@@ -1,6 +1,5 @@
 import React, { useState } from 'react'
 import { FormDataContext } from '../context/Context'
-// import LogIn from './LogIn'
 import JsonFormOutput from './JsonFormOutput'
 
 const data = {
