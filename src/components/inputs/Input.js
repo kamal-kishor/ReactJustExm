@@ -10,7 +10,10 @@ export default function InputFields({
   size,
   placeholder,
   type,
-  className
+  className,
+  onChange,
+  ref,
+  value
 }) {
   return (
     <>
@@ -22,6 +25,9 @@ export default function InputFields({
           placeholder={placeholder}
           id={id}
           type={type}
+          onChange={onChange}
+          ref={ref}
+          value={value}
         />
       </InputGroup>
     </>

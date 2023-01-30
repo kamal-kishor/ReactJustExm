@@ -25,8 +25,11 @@ export default function LogIn() {
         action.resetForm()
       }
     })
-
   console.log(errors)
+
+  // const { user } = useContext(FormDataContext)
+  // console.log(user)
+
   return (
     <div className="container">
       <div className="row">
@@ -123,6 +126,17 @@ export default function LogIn() {
             <JsonForm />
           </div>
         </div>
+      </div>
+      <div className="row">
+        {/* {user.map((userdata) => {
+          return (
+            <div key={userdata.name}>
+              <h4>
+                <center>{userdata.name}</center>
+              </h4>
+            </div>
+          )
+        })} */}
       </div>
     </div>
   )

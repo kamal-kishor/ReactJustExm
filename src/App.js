@@ -35,7 +35,9 @@ function App() {
       <NavBar title="Heading" home="homeOne" mode={mode} toggleMode={toggleMode} />
       <Alert alert={alert} />
       <ContactUs heading="Contact Us" mode={mode} />
+      {/* <ContextForm> */}
       <LogIn />
+      {/* </ContextForm> */}
     </>
   )
 }

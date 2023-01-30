@@ -1,7 +1,7 @@
-import React from 'react'
-import ButtonsComponent from './buttons/ButtonsComponent'
-import InputFields from './inputs/Input'
-import CustomSelect from './select/Select'
+import React, { useState } from 'react'
+import { FormDataContext } from '../context/Context'
+// import LogIn from './LogIn'
+import JsonFormOutput from './JsonFormOutput'
 
 const data = {
   form: {
@@ -15,7 +15,7 @@ const data = {
             label: 'Name',
             required: true,
             data_type: 'Integer',
-            html_element: 'textbox'
+            html_element: 'text'
           },
           {
             name: 'email',
@@ -30,7 +30,7 @@ const data = {
             label: 'Phone',
             required: true,
             data_type: 'number',
-            html_element: 'textbox'
+            html_element: 'number'
           },
           {
             name: 'age',
@@ -70,77 +70,88 @@ const data = {
   }
 }
 export default function JsonForm() {
-  // const onSubmit = (values) => {
-  //   console.log('Form Data ', values)
-  // }
+  const [user, setUser] = useState({})
 
+  const handleChange = (e) => {
+    setUser({
+      ...user,
+      [e.target.name]: e.target.value
+    })
+  }
+
+  const handleSubmit = (e) => {
+    e.preventDefault()
+    // console.log(user)
+    // console.log('This is submit')
+  }
   return (
-    <div>
-      <form>
-        {data.form.section.map((formData) => {
-          return (
-            <div key={formData.order}>
-              <h4>
-                <center>{formData.section_title}</center>
-              </h4>
-              {formData.fields.map((inputData) => {
-                switch (inputData.html_element) {
-                  case 'textbox':
-                    return (
-                      <InputFields
-                        type={inputData.html_element}
-                        label={inputData.label}
-                        placeholder={inputData.label}
-                        required={inputData.required}
-                        name={inputData.name}
-                        // onChange={this.handleChange}
-                        // ref={(ref) => (this.formRefs[inputData.name] = ref)}
-                      />
-                    )
-                  case 'email':
-                    return (
-                      <InputFields
-                        type={inputData.html_element}
-                        label={inputData.label}
-                        placeholder={inputData.label}
-                        required={inputData.required}
-                        name={inputData.name}
-                        // onChange={this.handleChange}
-                        // ref={(ref) => (this.formRefs[inputData.name] = ref)}
-                      />
-                    )
-                  case 'number':
-                    return (
-                      <InputFields
-                        type={inputData.html_element}
-                        label={inputData.label}
-                        placeholder={inputData.label}
-                        required={inputData.required}
-                        name={inputData.name}
-                        // onChange={this.handleChange}
-                        // ref={(ref) => (this.formRefs[inputData.name] = ref)}
-                      />
-                    )
-                  case 'dropdown':
-                    return (
-                      <CustomSelect
-                        option={inputData.dropcyle}
-                        label={inputData.label}
-                        // onChange={this.handleChange}
-                        // ref={(ref) => (this.formRefs[inputData.name] = ref)}
-                      />
-                    )
-                  default:
-                    break
-                }
-              })}
-            </div>
-          )
-        })}
-        <div className="row my-4">
-          <ButtonsComponent contained="success" label="Submit" type="submit" />
+    <>
+      <form onSubmit={handleSubmit}>
+        <div className="form-group">
+          {data.form.section.map((formData) => {
+            return (
+              <div key={formData.order}>
+                <h4>
+                  <center>{formData.section_title}</center>
+                </h4>
+                {formData.fields.map((inputData) => {
+                  switch (inputData.html_element) {
+                    case 'text':
+                      return (
+                        <input
+                          type={inputData.html_element}
+                          name={inputData.name}
+                          placeholder={inputData.label}
+                          onChange={handleChange}
+                          className="form-control mb-3"
+                        />
+                      )
+                    case 'email':
+                      return (
+                        <input
+                          type={inputData.html_element}
+                          name={inputData.name}
+                          placeholder={inputData.label}
+                          onChange={handleChange}
+                          className="form-control mb-3"
+                        />
+                      )
+                    case 'number':
+                      return (
+                        <input
+                          type={inputData.html_element}
+                          name={inputData.name}
+                          placeholder={inputData.label}
+                          onChange={handleChange}
+                          className="form-control mb-3"
+                        />
+                      )
+                    // case 'dropdown':
+                    //   return (
+                    //     <CustomSelect
+                    //       option={inputData.dropcyle}
+                    //       label={inputData.label}
+                    //       onChange={handleChange}
+                    //       // ref={inputRef}
+                    //     />
+                    //   )
+                    default:
+                      break
+                  }
+                })}
+              </div>
+            )
+          })}
+          <div className="row my-4">
+            <button label="Submit" type="submit">
+              Submit
+            </button>
+          </div>
         </div>
       </form>
-    </div>
+      <FormDataContext.Provider value={{ user }}>
+        <JsonFormOutput />
+      </FormDataContext.Provider>
+    </>
   )
 }
