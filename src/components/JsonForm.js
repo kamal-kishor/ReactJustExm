@@ -85,6 +85,9 @@ export default function JsonForm() {
   }
   return (
     <>
+      <FormDataContext.Provider value={{ user }}>
+        <JsonFormOutput />
+      </FormDataContext.Provider>
       <form onSubmit={handleSubmit}>
         <div className="form-group">
           {data.form.section.map((formData) => {
@@ -148,9 +151,6 @@ export default function JsonForm() {
           </div>
         </div>
       </form>
-      <FormDataContext.Provider value={{ user }}>
-        <JsonFormOutput />
-      </FormDataContext.Provider>
     </>
   )
 }

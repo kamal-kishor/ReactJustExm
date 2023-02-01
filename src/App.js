@@ -4,6 +4,7 @@ import NavBar from './components/NavBar'
 import Alert from './components/Alert'
 import LogIn from './components/LogIn'
 import React, { useState } from 'react'
+import FormDataContextProvider from './context/Context'
 
 function App() {
   const [mode, setMode] = useState('light ')
@@ -35,9 +36,9 @@ function App() {
       <NavBar title="Heading" home="homeOne" mode={mode} toggleMode={toggleMode} />
       <Alert alert={alert} />
       <ContactUs heading="Contact Us" mode={mode} />
-      {/* <ContextForm> */}
-      <LogIn />
-      {/* </ContextForm> */}
+      <FormDataContextProvider>
+        <LogIn />
+      </FormDataContextProvider>
     </>
   )
 }
