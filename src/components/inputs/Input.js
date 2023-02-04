@@ -10,6 +10,7 @@ export default function InputFields({
   size,
   placeholder,
   type,
+  name,
   className,
   onChange,
   ref,
@@ -24,6 +25,7 @@ export default function InputFields({
           aria-label="Text input with checkbox"
           placeholder={placeholder}
           id={id}
+          name={name}
           type={type}
           onChange={onChange}
           ref={ref}

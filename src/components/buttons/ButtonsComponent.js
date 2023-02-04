@@ -1,7 +1,7 @@
 import * as React from 'react'
 // import Stack from '@mui/material/Stack'
 import Button from 'react-bootstrap/Button'
-import 'bootstrap/dist/css/bootstrap.min.css'
+// import 'bootstrap/dist/css/bootstrap.min.css'
 import PropTypes from 'prop-types'
 // import './ContainerButton.css'
 
@@ -12,6 +12,7 @@ export default function ButtonsComponent({
   contained,
   size,
   label,
+  disabled,
   ...props
 }) {
   // const mode = primary ? 'container-button-primary' : 'container-button-secondary'
@@ -21,6 +22,7 @@ export default function ButtonsComponent({
       className={size}
       href={hreff}
       color={colors}
+      disabled={disabled}
       {...props}>
       {label}
     </Button>
@@ -37,5 +39,6 @@ ButtonsComponent.propTypes = {
 
 ButtonsComponent.defaultProps = {
   label: 'Sample Button',
-  size: 'medium'
+  size: 'btn-sm',
+  disabled: false
 }

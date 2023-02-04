@@ -7,6 +7,7 @@ export default function cardItems(state = [initialState], action) {
     case ADD_TO_CART:
       // console.warn("reducer",action)
       return [...state, { cardData: action.data }]
+
     case REMOVE_TO_CART:
       state.pop()
       return [...state]

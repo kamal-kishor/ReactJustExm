@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import { FormDataContext } from '../context/Context'
 import JsonFormOutput from './JsonFormOutput'
+import InputFields from '../components/inputs/Input'
 
 const data = {
   form: {
@@ -100,32 +101,35 @@ export default function JsonForm() {
                   switch (inputData.html_element) {
                     case 'text':
                       return (
-                        <input
+                        <InputFields
                           type={inputData.html_element}
                           name={inputData.name}
                           placeholder={inputData.label}
                           onChange={handleChange}
                           className="form-control mb-3"
+                          // label={inputData.label}
                         />
                       )
                     case 'email':
                       return (
-                        <input
+                        <InputFields
                           type={inputData.html_element}
                           name={inputData.name}
                           placeholder={inputData.label}
                           onChange={handleChange}
                           className="form-control mb-3"
+                          // label={inputData.label}
                         />
                       )
                     case 'number':
                       return (
-                        <input
+                        <InputFields
                           type={inputData.html_element}
                           name={inputData.name}
                           placeholder={inputData.label}
                           onChange={handleChange}
                           className="form-control mb-3"
+                          // label={inputData.label}
                         />
                       )
                     // case 'dropdown':
