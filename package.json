@@ -28,7 +28,7 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "jest",
+    "test": "jest --coverage",
     "eject": "react-scripts eject",
     "pre-commit": "lint-staged",
     "postinstall": "husky install && cd app && yarn install",
@@ -94,6 +94,8 @@
     "eslint-plugin-react": "^7.32.1",
     "husky": "^8.0.3",
     "jest": "^27.5.1",
+    "jest-environment-jsdom": "^29.4.1",
+    "jsdom": "^21.1.0",
     "prettier": "^2.8.3",
     "prop-types": "^15.8.1",
     "react-router-dom": "^6.8.0",

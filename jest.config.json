@@ -1,0 +1,9 @@
+{
+  "bail": 1,
+  "verbose": true,
+  "testEnvironment": "jest-environment-jsdom",
+  "testEnvironmentOptions": {
+    "url": "http://localhost",
+    "resources": "usable"
+  }
+}
