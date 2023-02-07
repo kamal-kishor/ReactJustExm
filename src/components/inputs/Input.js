@@ -1,7 +1,7 @@
 import * as React from 'react'
 import Form from 'react-bootstrap/Form'
 import InputGroup from 'react-bootstrap/InputGroup'
-import 'bootstrap/dist/css/bootstrap.min.css'
+// import 'bootstrap/dist/css/bootstrap.min.css'
 import PropTypes from 'prop-types'
 
 export default function InputFields({

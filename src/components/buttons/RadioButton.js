@@ -1,6 +1,6 @@
 import * as React from 'react'
 import Form from 'react-bootstrap/Form'
-import 'bootstrap/dist/css/bootstrap.min.css'
+// import 'bootstrap/dist/css/bootstrap.min.css'
 import PropTypes from 'prop-types'
 
 export default function ButtonsComponent({

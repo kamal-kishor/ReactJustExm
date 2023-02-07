@@ -44,6 +44,7 @@ function App() {
           <Route path="/time" element={<Time />} />
         </Routes>
 
+        {/* <Temperatrure /> */}
         <Alert alert={alert} />
         <ContactUs heading="Contact Us" mode={mode} />
         <FormDataContextProvider>

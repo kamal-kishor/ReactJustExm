@@ -3,7 +3,6 @@
   "verbose": true,
   "testEnvironment": "jest-environment-jsdom",
   "testEnvironmentOptions": {
-    "url": "http://localhost",
-    "resources": "usable"
+    "url": "http://localhost"
   }
 }

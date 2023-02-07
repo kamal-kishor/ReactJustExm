@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import InputField from './InputField'
 import HomeContainer from '../container/HomeContainer'
 import FunComponent from './FunComponent'
+import Temperatrure from './Temperatrure'
 
 export default function ContactUs(props) {
   const handleOnChange = (event) => {
@@ -16,6 +17,7 @@ export default function ContactUs(props) {
   const [msg, setmsg] = useState('Enter The Message')
   return (
     <div>
+      <Temperatrure />
       <div
         className="container"
         style={{ color: props.mode === 'light' ? 'white' : '#042743' }}>
