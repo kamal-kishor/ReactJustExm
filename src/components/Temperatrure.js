@@ -47,7 +47,7 @@ export default function Temperatrure() {
                     </div>
                     <div className="col-lg-3">
                       <p>
-                        <strong>Feels Like :</strong> {weather.feels_like}
+                        <strong>Feels Like :</strong> {weather.feels_like} &#8451;
                       </p>
                       <p>
                         <strong>Cloud Density :</strong> {weather.cloud_pct}
@@ -58,9 +58,9 @@ export default function Temperatrure() {
                         <strong>Sunset :</strong> {weather.sunset}
                       </p>
                       <p>
-                        <strong>Temperature : Max-</strong>
-                        {weather.max_temp}^c , <strong>Min-</strong>
-                        {weather.min_temp}^c
+                        <strong>Temp : Max: </strong>
+                        {weather.max_temp}&#8451; , <strong>Min: </strong>
+                        {weather.min_temp}&#8451;
                       </p>
                     </div>
                     <div className="col-lg-3">
